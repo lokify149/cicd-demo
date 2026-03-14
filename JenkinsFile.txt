@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build') {
+            steps {
+                bat 'gcc main.c -o app.exe'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                bat 'app.exe'
+            }
+        }
+
+    }
+}
